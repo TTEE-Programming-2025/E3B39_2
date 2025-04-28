@@ -52,7 +52,78 @@ int main() {
             return 0;
         }
     }
+     // 2
+    char choice, size, ans;
+    int i, j, space, letter, number;
+    while(1){
+        //system("clear");
+        system("CLS");
+        printf("------------------------\n");
+        printf("| a. 畫出直角三角形    |\n");
+        printf("| b. 顯示乘法表        |\n");
+        printf("| c. 結束              |\n");
+        printf("------------------------\n");
+        printf("請輸入你想前往的功能：");
+        scanf(" %c", &choice);
+        flush_input();
+        if (choice == 'A' || choice == 'a'){
+            while (1){
+                //system("clear");
+                system("CLS");
+                printf("請輸入一個 'a' 到 'n' 之間的字元：");
+                scanf(" %c", &size);
+                flush_input();
+                if (size >= 'a' && size <= 'n'){
+                    printf("\n\n");
+                    for (i = 1 ; i <= size - 'a' + 2 ; i++) {
+                        for (space = 1 ; space <= size - 'a' + 2 - i ; space++) {
+                            printf(" ");
+                        }
+                        for (letter = 1 ; letter <= i - 1 ; letter++) {
+                            printf("%c", size - i + 1 + letter);
+                        }
+                        printf("\n");
+                    }
+                    printf("\n請按 Enter 回到主畫面\n");
+                    //getchar();
+                    system("PAUSE");
+                    break;
+                }else{
+                    printf("請輸入 'a' 到 'n' 之間的字元，按 Enter 再試一次\n");
+                    //getchar();
+                    system("PAUSE");
+                }
+            }
+        }else if (choice == 'B' || choice == 'b'){
+            while (1){
+                //system("clear");
+                system("CLS");
+                printf("請輸入一個 '1' 到 '9' 之間的數字：");
+                scanf("%d", &number);
+                flush_input();
+                if (number >= 1 && number <= 9){
+                    printf("\n\n");
+                    for (i = 1 ; i <= number ; i++) {
+                        for (j = 1 ; j <= number ; j++) {
+                            printf("%dx%d=%-2d ", i, j, i * j);
+                        }
+                        printf("\n");
+                    }
+                    printf("\n請按 Enter 回到主畫面\n");
+                    //getchar();
+                    system("PAUSE");
+                    break;
+                }else{
+                    printf("請輸入一個 '1' 到 '9' 之間的數字，按 Enter 再試一次\n");
+                    //getchar();
+                    system("PAUSE");
+                }
+            }
+        }
+    }
+    return 0;
 }
+
 void flush_input(void) {
     //int ch;
     //while ((ch = getchar()) != '\n' && ch != EOF) {}
