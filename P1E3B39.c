@@ -120,6 +120,28 @@ int main() {
                 }
             }
         }
+	else if (choice == 'C' || choice == 'c'){
+            while (1){
+                //system("clear");
+                system("CLS");
+                printf("你要繼續嗎? (y/n)：");
+                scanf(" %c", &ans);
+                flush_input();
+                if (ans == 'Y' || ans == 'y'){
+                    break;
+                }else if (ans == 'N' || ans == 'n'){
+                    exit(0);
+                }else{
+                    printf("請輸入 'y' 或 'n'，按 Enter 再試一次\n");
+                    //getchar();
+                    system("PAUSE");
+                }
+            }
+        }else {
+            printf("請輸入 'a', 'b' 或 'c'，按 Enter 再試一次\n");
+            //getchar();
+            system("PAUSE");
+        }
     }
     return 0;
 }
